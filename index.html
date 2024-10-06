@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Scroll Animation</title>
+  </head>
+  <style>
+   ::-webkit-scrollbar{
+    display: none;
+   }
+   html, body {
+    cursor: none;
+  }
+   
+  @media (max-width: 768px) {
+    html, body {
+      cursor: auto;
+    }
+    .crsr {
+      display: none;
+    }
+  }
+  </style>
+  <body>
+    <div class="crsr h-5 w-5 bg-zinc-500 fixed z-[99] rounded-full opacity-[.5]"></div>
+    <div class="w-full bg-zinc-900">
+      <div class="parent w-full h-[150vh] md:h-[2000vh] relative">
+        <div class="w-full sticky top-0 left-0 h-screen overflow-x-hidden">
+          <canvas class="w-full h-screen" id="canvas"></canvas>
+          <div class="absolute animate-1 z-[2] text-white bottom-10 w-full md:w-1/2 left-5 md:left-10">
+            <h1 class="leading-tight font-[100] text-xl md:text-3xl">
+              &copy; 2024 Lazy Codwr🔥
+            </h1>
+            <h1 class="text-xl md:text-3xl mt-2">SHAPING BRANDS - CRAFTING MOTION</h1>
+          </div>
+          <div class="absolute animate-2 flex z-[2] text-white bottom-10 w-full md:w-1/2 right-0 text-right opacity-0">
+            <h1 class="leading-tight font-[100] uppercase text-3xl md:text-6xl w-full">
+              Transforming Visions
+            </h1>
+            <h1 class="text-sm md:text-xl w-full md:w-1/2 mt-2">
+              Building identity and inspiring action. Sculpting digital
+              experiences and resonate.
+            </h1>
+          </div>
+          <div class="absolute animate-3 z-[2] text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 w-full md:w-auto px-5 md:px-0">
+            <h1 class="leading-tight font-[100] uppercase text-3xl md:text-6xl">
+              Elevating Aesthetics
+            </h1>
+            <h1 class="text-sm md:text-xl mt-2">
+              Crafting solutions and exploring new horizons. Evolving narratives
+              and elevating aesthetics in every project.
+            </h1>
+          </div>
+          <div class="w-full md:w-1/3 animate-4 translate-x-full h-screen bg-white absolute right-0 top-0 z-[2] p-5 md:p-10">
+            <h3 class="elem text-lg md:text-xl font-[100]">&copy; 2024 Lazy Codwr🔥</h3>
+            <p class="elem mt-5 md:mt-10 text-base md:text-xl">
+              Sculpting Digital Transforming vision into digital realities.
+              Weaving stories that captivate and innovate. Exploring new
+              possibilities with a focus on narrative evolution. Crafting
+              solutions that engage and elevate.
+            </p>
+            <button class="elem border-[1px] px-3 py-2 border-[#555] font-[100] mt-4 md:mt-6 text-sm md:text-base">
+              Get Reviews-
+            </button>
+            <div class="elem absolute bottom-10 left-5 right-5 md:left-10 md:right-10">
+              <h3 class="text-lg md:text-xl">Innovating Design</h3>
+              <p class="text-xs md:text-sm mt-2 md:mt-3">
+                Connecting ideas to foster creativity. Designing impactful
+                experiences that resonate. Feel free to mix and match these
+                sections to suit your website's design needs!
+              </p>
+              <button class="bg-black text-white px-5 md:px-7 text-xs md:text-sm mt-3 md:mt-4 py-3 md:py-4 font-[100] capitalize">
+                experience
+              </button>
+            </div>
+          </div>
+          <div class="absolute z-[2] animate-5 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-4xl md:text-6xl tracking-tighter opacity-0 w-full px-5 md:px-0">
+            &copy;Panelism
+            <span class="line w-5 md:w-10 h-0.5 md:h-1 bg-white inline-block align-middle"></span> 2048
+          </div>
+        </div>
+      </div>
+      <div class="w-full py-16 md:py-32 px-5 md:px-10 bg-white">
+        <h1 class="text-4xl md:text-8xl tracking-tighter">&reg; Our Recent Works.</h1>
+        <div id="head" class="w-full md:w-1/2 p-3 flex flex-col mt-10 md:mt-32 gap-5 md:gap-10">
+          <h3 class="text-3xl md:text-6xl">Zonk Blerp</h3>
+          <h3 class="text-3xl md:text-6xl">Flibble Sprock</h3>
+          <h3 class="text-3xl md:text-6xl">Wibble Zurf</h3>
+          <h3 class="text-3xl md:text-6xl">Quarn Blap</h3>
+          <h3 class="text-3xl md:text-6xl">Snarp Woogle</h3>
+          <h3 class="text-3xl md:text-6xl">Frizzle Bump</h3>
+          <h3 class="text-3xl md:text-6xl">Plonk Zorp</h3>
+          <h3 class="text-3xl md:text-6xl">Slibber Klop</h3>
+          <h3 class="text-3xl md:text-6xl">Glonk Dribble</h3>
+          <h3 class="text-3xl md:text-6xl">Twizzle Blurp</h3>
+          <h3 class="text-3xl md:text-6xl">Skribble Zinc</h3>
+          <h3 class="text-3xl md:text-6xl">Quibble Plop</h3>
+          <h3 class="text-3xl md:text-6xl">Brizzle Nerp</h3>
+          <h3 class="text-3xl md:text-6xl">Fuzzle Droop</h3>
+          <h3 class="text-3xl md:text-6xl">Krinkle Splap</h3>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script>
+      const crsr = document.querySelector(".crsr")
+
+
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {});
+
+      lenis.on("scroll", ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const frames = {
+        currentIndex: 0,
+        maxIndex: 538,
+      };
+
+      let imagesLoaded = 0;
+
+      let images = [];
+
+      function preloadImages() {
+        for (let i = 1; i <= frames.maxIndex; i++) {
+          const imageUrl = `./frames/frame_${i
+            .toString()
+            .padStart(4, "0")}.jpg`;
+          const img = new Image();
+          img.src = imageUrl;
+
+          img.onload = function () {
+            imagesLoaded++;
+            if (imagesLoaded === frames.maxIndex) {
+              loadImages(frames.currentIndex);
+              startAnimation();
+            }
+          };
+
+          images.push(img);
+        }
+      }
+
+      function loadImages(index) {
+        if (index >= 0 && index <= frames.maxIndex) {
+          const img = images[index];
+
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+
+          const scaleX = canvas.width / img.width;
+          const scaleY = canvas.height / img.height;
+          const scale = Math.max(scaleX, scaleY);
+
+          const newWidth = img.width * scale;
+          const newHeight = img.height * scale;
+
+          const offsetX = (canvas.width - newWidth) / 2;
+          const offsetY = (canvas.height - newHeight) / 2;
+
+          ctx.imageSmoothingEnabled = "true";
+          ctx.imageSmoothingQuality = "high";
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(img, offsetX, offsetY, newWidth, newHeight);
+
+          frames.currentIndex = index;
+        }
+      }
+
+      function startAnimation() {
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".parent",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 2,
+          },
+        });
+        function updateFrames(index) {
+          return {
+            currentIndex: index,
+            ease: "linear",
+            onUpdate: function () {
+              loadImages(Math.floor(frames.currentIndex));
+            },
+          };
+        }
+
+        tl.to(frames, updateFrames(50), "a")
+          .to(".animate-1", { opacity: 0, ease: "linear" }, "a")
+
+          .to(frames, updateFrames(90), "b")
+          .to(".animate-2", { opacity: 1, ease: "linear" }, "b")
+
+          .to(frames, updateFrames(120), "c")
+          .to(".animate-2", { opacity: 0, ease: "linear" }, "c")
+
+          .to(frames, updateFrames(160), "d")
+          .to(".animate-3", { opacity: 1, ease: "linear" }, "d")
+
+          .to(frames, updateFrames(200), "e")
+          .to(".animate-3", { opacity: 0, ease: "linear" }, "e")
+
+          .to(frames, updateFrames(240), "f")
+          .to(".animate-4", { x: "0%", ease: "expo" }, "f")
+
+          .to(frames, updateFrames(280), "g")
+          .to(".animate-4", { x: "0%", ease: "expo" }, "g")
+
+          .to(frames, updateFrames(320), "h")
+          .to(".animate-4", { opacity: 0, ease: "linear" }, "h")
+
+          .to(frames, updateFrames(360), "i")
+          .to("canvas", { scale: 0.5, ease: "linear" }, "i")
+
+          .to(frames, updateFrames(400), "j")
+          .to(".animate-5", { opacity: 1, ease: "expo" }, "j")
+
+          .to(frames, updateFrames(440), "j")
+          .to(".animate-5 span", { width: 200, ease: "expo" }, "j")
+
+          .to(frames, updateFrames(480), "k")
+          .to("canvas", { scale: 1, ease: "linear" }, "k")
+
+          .to(frames, updateFrames(520), "m")
+          .to(".animate-5", { scale: 2, ease: "circ" }, "m")
+
+          .to(frames, updateFrames(537), "n")
+          .to(".animate-5", { scale: 1, ease: "expo" }, "n");
+      }
+      window.addEventListener("resize", function () {
+        loadImages(Math.floor(frames.currentIndex));
+      });
+
+      preloadImages();
+
+
+      document.querySelectorAll("#head h3").forEach(function (elem) {
+        gsap.from(elem, {
+          scrollTrigger: {
+            trigger: elem,
+            start: "top 90%",
+            end: "bottom 20%",
+            scrub: 2,
+          },
+          opacity: .3,
+        });
+      });
+
+      // Check if the device is mobile
+      const isMobile = window.innerWidth <= 768;
+
+      // Custom cursor setup (only for desktop)
+      const cursor = document.querySelector('.crsr');
+      if (!isMobile && cursor) {
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Get cursor dimensions
+        const cursorRect = cursor.getBoundingClientRect();
+        const cursorWidth = cursorRect.width;
+        const cursorHeight = cursorRect.height;
+
+        // Update cursor position on mouse move
+        document.addEventListener('mousemove', (e) => {
+          // Calculate the center position
+          mouseX = e.clientX - cursorWidth / 2;
+          mouseY = e.clientY - cursorHeight / 2;
+        });
+
+        // Animate cursor movement
+        gsap.ticker.add(() => {
+          gsap.to(cursor, {
+            duration: 0.3,
+            x: mouseX,
+            y: mouseY,
+            ease: "power3.out"
+          });
+        });
+
+        // Cursor click animation
+        document.addEventListener('mousedown', () => {
+          gsap.to(cursor, { 
+            duration: 0.15, 
+            scale: 0.8, 
+            ease: "power2.out",
+            // Adjust position to keep it centered while scaling
+            x: mouseX + cursorWidth * 0.1,
+            y: mouseY + cursorHeight * 0.1
+          });
+        });
+        document.addEventListener('mouseup', () => {
+          gsap.to(cursor, { 
+            duration: 0.15, 
+            scale: 1, 
+            ease: "power2.out",
+            // Reset to centered position
+            x: mouseX,
+            y: mouseY
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
